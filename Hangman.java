@@ -5,17 +5,22 @@ public class Hangman {
 	
 	static int gallowsNum;
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		Scanner scan = new Scanner(System.in);
 
 		System.out.println("Welcome to Hangman!");
 
-		//Read in hangman word from text file
-		
+		Scanner s = new Scanner(new File("words.txt"));
 
-		//Scanner s = new Scanner(new File(""));
 
-		String word = "temp";//s.nextLine();
+		Random rand = new Random();
+		int num = rand.nextInt(417147);
+
+		String word = "";
+
+		for (int i = 0; i < num; i++) {
+			word = s.nextLine();
+		}
 
 		char[] hangmanWord = new char[word.length()];
 		for (int i = 0; i < hangmanWord.length; i++) {
@@ -121,7 +126,6 @@ public class Hangman {
 		}
 		System.out.println();
 		System.out.println("---------------");
-
 	}
 
 
